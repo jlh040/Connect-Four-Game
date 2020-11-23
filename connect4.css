@@ -29,3 +29,7 @@
 #column-top td:hover {
   background-color: gold;
 }
+
+body {
+  background: linear-gradient(90deg, rgba(24,181,198,1) 45%, rgba(124,209,205,1) 71%);
+}
