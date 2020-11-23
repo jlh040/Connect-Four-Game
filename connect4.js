@@ -17,6 +17,12 @@ const board = []; // array of rows, each row is array of cells  (board[y][x])
 
 function makeBoard() {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
+  for (let i = 0; i < HEIGHT; i++) {
+    board.push([]);
+    for (let j = 0; j < WIDTH; j++) {
+      board[i].push(null);
+    }
+  }
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
@@ -25,7 +31,7 @@ function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
 
   // TODO: add comment for this code
-  var top = document.createElement("tr");
+  const top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
 
@@ -129,5 +135,5 @@ function checkForWin() {
   }
 }
 
-makeBoard();
-makeHtmlBoard();
+// makeBoard();
+// makeHtmlBoard();
