@@ -28,9 +28,13 @@ function makeBoard() {
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
 function makeHtmlBoard() {
-  // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
-
-  // TODO: add comment for this code
+  // get "htmlBoard" variable from the item in HTML w/ID of "board"
+  const htmlBoard = document.getElementById('board');
+  // Make the topmost row for the table, give it an id of column-top, and put a listener on it
+  // that will allow it to put pieces onto the main board when clicked. Loop through the number of game
+  // pieces in each row. Create a <td> element with an id equal to its position in its row. And then
+  // append this <td> to the top row. We will do this for however many game pieces the row should have.
+  // When this is done, we append the row to the table.
   const top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
@@ -42,7 +46,11 @@ function makeHtmlBoard() {
   }
   htmlBoard.append(top);
 
-  // TODO: add comment for this code
+  // Loop through the number of rows that should be on the board. Create a row for each loop.
+  // One a row is created, make <td> elements, give them an attribute corresponding to which row
+  // and which column they are in, and then append them to the row. Once finished with the row,
+  // append the row to the table. Then, repeat this process for however many
+  // rows that should be in the table.
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
     for (let x = 0; x < WIDTH; x++) {
@@ -135,5 +143,5 @@ function checkForWin() {
   }
 }
 
-// makeBoard();
-// makeHtmlBoard();
+makeBoard();
+makeHtmlBoard();
